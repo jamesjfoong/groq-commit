@@ -1,0 +1,25 @@
+{
+  "name": "groq-commit",
+  "version": "1.0.0",
+  "description": "Generate commit messages from git diff using Groq",
+  "main": "src/index.js",
+  "bin": {
+    "groq-commit": "./src/cli.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "commander": "^13.1.0",
+    "conf": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "groq-sdk": "^0.15.0",
+    "inquirer": "^12.4.1",
+    "simple-git": "^3.27.0"
+  }
+}
