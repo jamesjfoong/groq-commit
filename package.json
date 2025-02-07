@@ -1,25 +1,66 @@
 {
-  "name": "groq-commit",
+  "name": "@jamesjfoong/gqc",
   "version": "1.0.0",
   "description": "Generate commit messages from git diff using Groq",
-  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesjfoong/groq-commit.git"
+  },
+  "homepage": "https://github.com/jamesjfoong/groq-commit",
+  "bugs": "https://github.com/jamesjfoong/groq-commit/issues",
   "bin": {
-    "groq-commit": "./src/cli.js"
+    "gqc": "./dist/index.js"
   },
-  "type": "module",
+  "preferGlobal": true,
   "scripts": {
-    "start": "node src/cli.js"
+    "build": "rm -rf dist; tsc -p tsconfig.json --outDir dist",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint \"src/**/*.ts\" --fix",
+    "dev": "ts-node src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "groq",
+    "commit",
+    "message",
+    "git",
+    "diff",
+    "cli",
+    "tool"
+  ],
+  "author": {
+    "name": "James Jeremy Foong",
+    "email": "jamesjfoong2000@gmail.com"
+  },
+  "license": "MIT",
   "dependencies": {
-    "axios": "^1.7.9",
+    "chalk": "^4.1.2",
     "commander": "^13.1.0",
-    "conf": "^13.1.0",
+    "conf": "^11.0.2",
+    "configstore": "^5.0.1",
+    "cosmiconfig": "^9.0.0",
     "dotenv": "^16.4.7",
     "groq-sdk": "^0.15.0",
     "inquirer": "^12.4.1",
+    "ora": "^5.4.1",
+    "reflect-metadata": "^0.2.2",
     "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/configstore": "^6.0.2",
+    "@types/inquirer": "^9.0.0",
+    "@types/node": "^20.17.17",
+    "@types/reflect-metadata": "^0.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "prettier": "^3.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
